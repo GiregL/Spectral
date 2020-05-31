@@ -63,11 +63,12 @@ bool network::ServerSocket::defaultCallback(int socket) {
 bool network::ServerSocket::loopOnce(std::function<bool(int)> func) {
     sockaddr_in csin = {0};
     unsigned int csinsize = sizeof(csin);
+
     SOCKET sock_tmp = accept(m_socket, (sockaddr*)& csin, &csinsize);
     bool result = false;
+
     if (sock_tmp != -1) {
         result = func(sock_tmp);
-        close(sock_tmp);
     } else {
         perror("accept()");
     }
