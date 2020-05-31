@@ -1,0 +1,6 @@
+# Spectral
+
+Spectral is an attempt to replace Apache and PHP on web servers.
+
+It will be a simple http server combined with an interpreter of another language
+than PHP.
