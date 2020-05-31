@@ -40,7 +40,7 @@ network::ServerSocket::~ServerSocket() {
 }
 
 void network::ServerSocket::loop(std::function<bool(int)> func) {
-    while(std::cout << "Looping" << std::endl, loopOnce(func));
+    while(loopOnce(func));
 }
 
 void network::ServerSocket::loop() {
